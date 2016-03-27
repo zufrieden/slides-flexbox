@@ -1,2 +1,2 @@
 # slides-flexbox
-Flexbox - Meetup Frontend
+Flexbox - Frontend Meetup 
