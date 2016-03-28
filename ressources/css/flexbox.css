@@ -1,3 +1,6 @@
+html{
+  box-sizing: border-box;
+}
 /* slides theme */
 .reveal section img, .reveal section a img{
   border: none;
@@ -266,4 +269,39 @@ h3.example::after {
   font-size: 16px;
   -webkit-flex: 1 0 100%;
   flex: 1 0 100%;
+}
+
+
+/* flex input field */
+.reveal .btn{
+  background-color: #ef2678;
+  border-top: 1px solid #ef2678;
+  border-bottom: 1px solid #ef2678;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+}
+.reveal .newsletter-form{
+  display:flex;
+  border:20px solid rgba(0,0,0,0.2);
+  border-radius:5px;
+}
+.reveal .newsletter-form input, .reveal .newsletter-form select{
+  line-height:50px;
+  font-size: 30px;
+  /*-webkit-appearance:none;*/
+  border:none;
+}
+.reveal .newsletter-form select{
+  padding-left: 1.4em;
+  padding-right: 1.4em;
+  font-size: 20px;
+}
+.reveal .newsletter-form input[type="email"]{
+  padding-left: 0.4em;
+  flex-grow: 1;
+  border-top:1px solid white;
+  border-bottom:1px solid white;
 }
