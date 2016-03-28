@@ -1,3 +1,82 @@
+/* slides theme */
+.reveal section img, .reveal section a img{
+  border: none;
+  box-shadow: none;
+}
+.reveal pre{
+  tab-size: 1em;
+  background: #3f3f3f;
+}
+.reveal pre code{
+  margin:0.5em;
+}
+.reveal .source-code{
+  font-family: 'Monaco', monospace;
+}
+
+/* Slide Antistatique */
+.antistatique_logo{
+  animation-duration: 4000ms;
+  animation-timing-function: ease-in-out;
+  animation-name: logo;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes logo {
+    0% {
+        fill: #ef2678;
+    }
+    100% {
+        fill: #000032;
+    }
+}
+
+
+/* Meetup flex */
+.reveal .frontenders{
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.4em;
+}
+.reveal .frontenders div{
+  flex: 1 1 auto;
+  background-color: #3f3f3f;
+  border: 1px solid #fff;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.reveal .frontenders div img{
+  object-fit: cover;
+  margin-top:0;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+
+.reveal .mega{
+  width: 1.1em;
+  height: 1.1em;
+  line-height: 0.9em;
+  margin: 0 auto 0.3em;
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+  color:#fff;
+  background-color: #ef2678;
+  border-radius: 0.55em;
+}
+
+/* Yoda */
+.yoda{
+  background: url('../img/yoda.jpg') 10% 50% no-repeat;
+  flex-grow: 1;
+  order:3;
+  background-size: cover;
+}
+
 /* Flex demo container */
 .container {
   display: -webkit-flex;
@@ -5,7 +84,7 @@
   padding: 10px !important;
   width: 90%;
   margin: 15px auto !important;
-  background-color: #eee;
+  background-color: #fff;
   color: white;
   box-sizing: border-box;
   font-size: 26px !important;
@@ -31,50 +110,50 @@ Color 8: #4B644A
   background-color: #2e86ab;
 }
 .container .item:nth-child(1)::before {
-  content: "1.\a0 Blue";
+  content: "1.\a0 CSS";
 }
 .container .item:nth-child(2) {
   background-color: #a23b72;
 }
 .container .item:nth-child(2)::before {
-  content: "2.\a0 Pink";
+  content: "2.\a0 IS";
 }
 .container .item:nth-child(3) {
   background-color: #f18f01;
 }
 .container .item:nth-child(3)::before {
-  content: "3.\a0 Yellow";
+  content: "3.\a0 AWESOME";
 }
 .container .item:nth-child(4) {
   background-color: #c73e1d;
 }
 .container .item:nth-child(4)::before {
-  content: "4.\a0 Orange";
+  content: "4.\a0 WITH";
 }
 .container .item:nth-child(5) {
   background-color: #5B0720;
   color: rgba(255,255,255,0.87);
 }
 .container .item:nth-child(5)::before {
-  content: "5.\a0 Bodeaux";
+  content: "5.\a0 FLEX";
 }
 .container .item:nth-child(6) {
   background-color: #4F1271;
 }
 .container .item:nth-child(6)::before {
-  content: "6.\a0 Purple";
+  content: "6.\a0 BOX";
 }
 .container .item:nth-child(7) {
   background-color: #7CAE8A;
 }
 .container .item:nth-child(7)::before {
-  content: "7.\a0 Light\a0 Green";
+  content: "7.\a0 FROM";
 }
 .container .item:nth-child(8) {
   background-color: #4B644A;
 }
 .container .item:nth-child(8)::before {
-  content: "8.\a0 Grass";
+  content: "8.\a0 THE FUTURE";
 }
 
 /* Flex demo line title */
@@ -165,7 +244,7 @@ h3.example::after {
   display: block;
   width: 40px;
   height: 40px;
-  background-color: #2e86ab;
+  background-color: #ef2678;
   border-radius: 20px;
   margin-right:10px;
 
