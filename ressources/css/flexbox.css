@@ -1,0 +1,190 @@
+/* Flex demo container */
+.container {
+  display: -webkit-flex;
+  display: flex;
+  padding: 10px !important;
+  width: 90%;
+  margin: 15px auto !important;
+  background-color: #eee;
+  color: white;
+  box-sizing: border-box;
+  font-size: 26px !important;
+}
+.container .item {
+  padding: 10px !important;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/** Colors from https://coolors.co/app/2e86ab-a23b72-f18f01-c73e1d-3b1f2b
+Color 1: #2e86ab
+Color 2: #a23b72
+Color 3: #f18f01
+Color 4: #c73e1d
+Color 5: #5B0720
+Color 6: #4F1271
+Color 7: #7CAE8A
+Color 8: #4B644A
+*/
+
+.container .item:nth-child(1) {
+  background-color: #2e86ab;
+}
+.container .item:nth-child(1)::before {
+  content: "1.\a0 Blue";
+}
+.container .item:nth-child(2) {
+  background-color: #a23b72;
+}
+.container .item:nth-child(2)::before {
+  content: "2.\a0 Pink";
+}
+.container .item:nth-child(3) {
+  background-color: #f18f01;
+}
+.container .item:nth-child(3)::before {
+  content: "3.\a0 Yellow";
+}
+.container .item:nth-child(4) {
+  background-color: #c73e1d;
+}
+.container .item:nth-child(4)::before {
+  content: "4.\a0 Orange";
+}
+.container .item:nth-child(5) {
+  background-color: #5B0720;
+  color: rgba(255,255,255,0.87);
+}
+.container .item:nth-child(5)::before {
+  content: "5.\a0 Bodeaux";
+}
+.container .item:nth-child(6) {
+  background-color: #4F1271;
+}
+.container .item:nth-child(6)::before {
+  content: "6.\a0 Purple";
+}
+.container .item:nth-child(7) {
+  background-color: #7CAE8A;
+}
+.container .item:nth-child(7)::before {
+  content: "7.\a0 Light\a0 Green";
+}
+.container .item:nth-child(8) {
+  background-color: #4B644A;
+}
+.container .item:nth-child(8)::before {
+  content: "8.\a0 Grass";
+}
+
+/* Flex demo line title */
+h3.example {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+}
+h3.example::before,
+h3.example::after {
+    content: "";
+    border-bottom: solid #39414C 1px;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+/* Flex demo baseline */
+@keyframes fontgrow1 {
+    0% {
+        font-size: 1em;
+    }
+    100% {
+        font-size: 3em;
+    }
+}
+@keyframes fontgrow2 {
+    0% {
+        font-size: 4em;
+    }
+    100% {
+        font-size: 1em;
+    }
+}
+
+.reveal .fontgrow1 {
+  animation-duration: 4000ms;
+  animation-timing-function: ease-in-out;
+  animation-name: fontgrow1;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.reveal .fontgrow2 {
+  animation-duration: 4000ms;
+  animation-timing-function: ease-in-out;
+  animation-name: fontgrow2;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Flex demo responsive media element*/
+@keyframes grow {
+    0% {
+        width: 300px;
+    }
+    100% {
+        width: 800px;
+    }
+}
+
+.reveal .media-example.media-example-animate {
+  animation-duration: 4000ms;
+  animation-timing-function: ease-in-out;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.reveal .media-example {
+  font-size: 20px;
+  line-height: normal;
+  border: solid black 1px;
+  padding: 10px;
+  text-align: left;
+
+  display: -webkit-flex;
+  display: flex;
+}
+.reveal .media-example-body {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: baseline;
+  align-items: baseline;
+}
+.reveal .media-example-image {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #2e86ab;
+  border-radius: 20px;
+  margin-right:10px;
+
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+.reveal .media-example-name {
+  font-weight: bold;
+  margin: 8px 5px 8px 0;
+  -webkit-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+.reveal .media-example-date {
+  color: rgba(0,0,0,0.5);
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.reveal .media-example-text {
+  font-size: 16px;
+  -webkit-flex: 1 0 100%;
+  flex: 1 0 100%;
+}

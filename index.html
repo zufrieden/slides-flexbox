@@ -15,10 +15,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- CSS for flexbox exemples -->
+		<link rel="stylesheet" href="ressources/css/flexbox.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -41,9 +44,854 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-				
+					<h1>Flexbox</h1>
+					<h2>layouting finally made easy</h2>
 				</section>
+				<section>
+					<section>
+						Frontend Meetup Romandie
+					</section>
+					<section>
+						Antistatique
+					</section>
+					<section>
+						Me
+					</section>
+				</section>
+				<section>
+					<section>
+						Block, inline, table, position ...
+						Flex is just another one.
+					</section>
+					<section>
+						Can I use flexbox ?
+						@todo --> Add printscreen
+					</section>
+					<section>
+						In a nutshell
+					</section>
+					<section>
+						Container alter its items (width/height) to best fill the available space
+					</section>
+					<section>
+						Direction-agnostic instead of vertically-based (block) or horizontally-based (inline)
+					</section>
+					<section>
+						Complex layouts, and changing/resizing container (stretching, shrinking, default)
+					</section>
+					<section>
 
+						<pre><code data-trim contenteditable class="css">
+.container {
+	display: flex;
+	align-items: baseline;
+}
+						</code></pre>
+
+						<div class="container" style="align-items: baseline;justify-content:center; height: 200px;">
+							<div class="item fontgrow1"></div>
+							<div class="item fontgrow2"></div>
+						</div>
+
+					</section>
+					<section>
+							<h3>
+								Main axis <span class="fragment"><strong>☞</strong></span>
+							</h3>
+								<h4>justify-content</h4>
+								<h4></h4>
+							<h3>
+								Cross axis <span class="fragment"><strong>☟</strong></span>
+							</h3>
+								<h4>align-items</h4>
+								<h4>align-content</h4>
+					</section>
+					<section>
+						<h4>Flex-direction:row;</h4>
+					</section>
+					<section>
+						<img src="ressources/img/flexbox-axes.png" alt="" />
+					</section>
+					<section>
+						<h4>Flex-direction:column;</h4>
+					</section>
+					<section>
+						<img src="ressources/img/flexbox-axes.png" alt="" style="transform: rotate(90deg);"/>
+					</section>
+					<section>
+						Direct child
+						<pre><code data-trim contenteditable class="html">
+<div class="container">
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+	<div class="item"></div>
+</div>
+						</code></pre>
+
+					</section>
+
+<!--  -->
+
+<section>
+	<h2>display: flex</h2>
+
+	<pre><code data-trim contenteditable class="html">
+<div class="container">
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+</div>
+	</code></pre>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+/* flex-direction: row; */
+}
+	</code></pre>
+
+	<div class="container">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+	<aside class="notes">
+
+	</aside>
+</section>
+
+<section>
+	<h2>Flex-direction</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+flex-direction: column;
+}
+	</code></pre>
+
+	<div class="container" style="flex-direction:column">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+</section>
+
+<section>
+	<h2>Flex-direction</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+flex-direction: row-reverse;
+}
+	</code></pre>
+
+	<div class="container" style="flex-direction:row-reverse">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+</section>
+
+<section>
+	<h2>Order</h2>
+
+	<p>Default : 0</p>
+
+	<pre><code data-trim contenteditable class="css">
+.item:nth-child(5) {
+order: -1;
+}
+.item:nth-child(2) {
+order: 1;
+}
+	</code></pre>
+
+	<div class="container">
+		<div class="item"></div>
+		<div class="item" style="order:1;order:1"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item" style="order:-1;order:-1"></div>
+	</div>
+</section>
+
+<section>
+	<h2>Order</h2>
+
+	<p>DOM is the default</p>
+
+	<pre><code data-trim contenteditable class="css">
+.item:nth-child(4) {
+order: 1;
+}
+.item:nth-child(2) {
+order: 1;
+}
+	</code></pre>
+
+	<div class="container">
+		<div class="item"></div>
+		<div class="item" style="order:1;order:1"></div>
+		<div class="item"></div>
+		<div class="item" style="order:1;order:1"></div>
+		<div class="item"></div>
+	</div>
+</section>
+
+<section>
+	<h2>Justify-content</h2>
+	<h4>center</h4>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+justify-content: center;
+}
+	</code></pre>
+
+	<div class="container" style="justify-content:center">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Justify-content</h2>
+	<h4>space-between</h4>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+justify-content: space-between;
+}
+	</code></pre>
+
+	<div class="container" style="justify-content:space-between">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Justify-content</h2>
+	<h4>space-between</h4>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+flex-direction:column;
+justify-content: space-between;
+}
+	</code></pre>
+
+	<div class="container" style="height:40vh;flex-direction:column;justify-content:space-between">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Justify-content</h2>
+	<h4>space-around</h4>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+justify-content: space-around;
+}
+	</code></pre>
+
+	<div class="container" style="justify-content: space-around">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Align-items</h2>
+	<h4>stretch</h4>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+height: 200px;
+/* align-items: stretch; */
+}
+	</code></pre>
+
+	<div class="container" style="height: 200px;">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Align-items</h2>
+	<h4>center</h4>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+height: 200px;
+align-items: center;
+}
+	</code></pre>
+
+	<div class="container" style="align-items: center; height: 200px;">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Align-items</h2>
+	<h4>baseline</h4>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+height: 200px;
+align-items: baseline;
+}
+	</code></pre>
+
+	<div class="container" style="align-items: baseline; height: 200px;">
+		<div class="item"></div>
+		<div class="item" style="font-size:2em;"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item" style="font-size:1.2em;"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Align-self</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+height: 200px;
+align-items: flex-end;
+}
+.item:nth-child(3) {
+align-self: stretch;
+}
+	</code></pre>
+
+	<div class="container" style="align-items: flex-end; height: 200px;">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item" style="align-self: stretch"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Margin</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+height: 200px;
+}
+.item:nth-child(3) {
+margin-left: auto;
+}
+	</code></pre>
+
+	<div class="container" style="height: 200px;">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item" style="margin-left: auto"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Margin</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+height: 200px;
+}
+.item:nth-child(1) {
+margin-right: auto;
+}
+.item:nth-child(3) {
+margin-left: auto;
+}
+	</code></pre>
+
+	<div class="container" style="height: 200px;">
+		<div class="item" style="margin-right: auto"></div>
+		<div class="item"></div>
+		<div class="item" style="margin-left: auto"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Margin</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+height: 200px;
+}
+.item {
+margin: auto;
+}
+	</code></pre>
+
+	<div class="container" style="height: 200px;">
+		<div class="item" style="margin: auto"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Flex-grow</h2>
+	<p>Spare space?</p>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+}
+.item:nth-child(4) {
+flex-grow: 1;
+}
+	</code></pre>
+
+	<div class="container">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item" style="flex-grow:1"></div>
+		<div class="item"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Flex-grow</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+}
+.item:nth-child(4) {
+flex-grow: 1;
+}
+.item:nth-child(5) {
+flex-grow: 2;
+}
+	</code></pre>
+
+	<div class="container">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item" style="flex-grow:1"></div>
+		<div class="item" style="flex-grow:2"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Flex-shrink</h2>
+	<p>Missing space?</p>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+}
+.item {
+/* flex-shrink: 1; */
+}
+	</code></pre>
+
+	<div class="container">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Flex-shrink</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+}
+.item {
+flex-shrink: 0;
+}
+	</code></pre>
+
+	<div class="container">
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Flex-shrink</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+}
+.item {
+flex-shrink: 0;
+}
+.item:nth-child(7) {
+flex-shrink: 1;
+}
+
+	</code></pre>
+
+	<div class="container">
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:1"></div>
+		<div class="item" style="flex-shrink:0"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Flex-shrink</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+}
+.item {
+flex-shrink: 0;
+}
+.item:nth-child(7) {
+flex-shrink: 1;
+}
+.item:nth-child(8) {
+flex-shrink: 2;
+}
+
+	</code></pre>
+
+	<div class="container">
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:0"></div>
+		<div class="item" style="flex-shrink:1"></div>
+		<div class="item" style="flex-shrink:2"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Flex-basis</h2>
+	<p>Size before space attribution</p>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+}
+.item {
+flex-basis: 150px;
+}
+	</code></pre>
+
+	<div class="container">
+		<div class="item" style="flex-basis:150px"></div>
+		<div class="item" style="flex-basis:150px"></div>
+		<div class="item" style="flex-basis:150px"></div>
+		<div class="item" style="flex-basis:150px"></div>
+		<div class="item" style="flex-basis:150px"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Flex-basis & flex-grow</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+}
+.item {
+flex-basis: 150px;
+}
+.item:nth-child(1) {
+flex-grow: 1;
+}
+	</code></pre>
+
+	<div class="container">
+		<div class="item" style="flex-basis:150px;flex-grow:1"></div>
+		<div class="item" style="flex-basis:150px"></div>
+		<div class="item" style="flex-basis:150px"></div>
+		<div class="item" style="flex-basis:150px"></div>
+		<div class="item" style="flex-basis:150px"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Flex-basis & flex-shrink</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+}
+.item {
+flex-basis: 150px;
+flex-shrink: 0;
+}
+.item:nth-child(5) {
+flex-shrink: 1;
+}
+	</code></pre>
+
+	<div class="container">
+		<div class="item" style="flex-basis:150px;flex-shrink:0"></div>
+		<div class="item" style="flex-basis:150px;flex-shrink:0"></div>
+		<div class="item" style="flex-basis:150px;flex-shrink:0"></div>
+		<div class="item" style="flex-basis:150px;flex-shrink:0"></div>
+		<div class="item" style="flex-basis:150px;flex-shrink:1"></div>
+		<div class="item" style="flex-basis:150px;flex-shrink:0"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Min-width & max-width</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+}
+.item {
+flex: 1 0 150px; // flex-grow flex-shrink flex-basis
+}
+.item:nth-child(2) {
+min-width: 250px;
+}
+.item:nth-child(4) {
+max-width: 50px;
+}
+	</code></pre>
+
+	<div class="container">
+		<div class="item" style="flex:1 0 150px"></div>
+		<div class="item" style="flex:1 0 150px; min-width: 250px"></div>
+		<div class="item" style="flex:1 0 150px"></div>
+		<div class="item" style="flex:1 0 150px; max-width: 50px"></div>
+		<div class="item" style="flex:1 0 150px"></div>
+	</div>
+
+</section>
+
+<section>
+	<h2>Flex-wrap</h2>
+
+	<pre><code data-trim contenteditable class="css">
+.container {
+display: flex;
+flex-wrap: wrap;
+}
+.item {
+flex: 1 0 150px;  // flex-grow flex-shrink flex-basis
+}
+	</code></pre>
+
+	<div class="container" style="flex-wrap:wrap;flex-wrap:wrap">
+		<div class="item" style="flex:1 0 150px"></div>
+		<div class="item" style="flex:1 0 150px"></div>
+		<div class="item" style="flex:1 0 150px"></div>
+		<div class="item" style="flex:1 0 150px"></div>
+		<div class="item" style="flex:1 0 150px"></div>
+		<div class="item" style="flex:1 0 150px"></div>
+		<div class="item" style="flex:1 0 150px"></div>
+		<div class="item" style="flex:1 0 150px"></div>
+	</div>
+
+</section>
+
+<!--  -->
+
+				</section>
+				<section>
+					<section>
+						<h3>Use cases</h3>
+					</section>
+					<section>
+
+				<pre><code data-trim contenteditable class="css">
+h3 {
+	display: flex;
+	align-items: center;
+}
+h3::before,
+h3::after {
+	content: "";
+	border-bottom: solid black 1px;
+	flex-grow: 1;
+}
+				</code></pre>
+				<pre><code data-trim contenteditable class="html">
+<h3>Lorem ipsum</h3>
+<h3>Dolore</h3>
+				</code></pre>
+
+				<div style="padding: 20px 10px 10px">
+
+					<h3 class="example">&nbsp;Lorem ipsum&nbsp;</h3>
+
+					<h3 class="example">&nbsp;Dolore&nbsp;</h3>
+
+				</div>
+			</section>
+			<section>
+			          <pre><code data-trim contenteditable class="html">
+<div class="media">
+  <div class="media-image"></div>
+  <div class="media-body">
+    <div class="media-name"></div>
+    <div class="media-date"></div>
+    <div class="media-text"></div>
+  </div>
+</div>
+			          </code></pre>
+
+			          <div class="media-example" style="margin: auto; width:450px">
+			            <div class="media-example-image"></div>
+			            <div class="media-example-body">
+			              <div class="media-example-name">Scheduled Campaign</div>
+			              <div class="media-example-date">April 6, 2015 to April 15, 2015</div>
+			              <div class="media-example-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed diam neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc lacinia nisl augue, eget pretium odio posuere et. Maecenas lorem mauris, sollicitudin eget dapibus eu, venenatis et neque.</div>
+			            </div>
+			          </div>
+
+
+			        </section>
+
+			        <section>
+			          <pre><code data-trim contenteditable class="css">
+.media {
+  display: flex;
+}
+.media-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.media-image {
+  flex-shrink: 0;
+}
+.media-name {
+  flex: 1 0 auto; // flex-grow flex-shrink flex-basis
+}
+.media-text {
+  flex: 1 0 100%; // flex-grow flex-shrink flex-basis
+}
+			          </code></pre>
+
+			          <div class="media-example media-example-animate" style="margin: auto">
+			            <div class="media-example-image"></div>
+			            <div class="media-example-body">
+			              <div class="media-example-name">Scheduled Campaign</div>
+			              <div class="media-example-date">April 6, 2015 to April 15, 2015</div>
+			              <div class="media-example-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed diam neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc lacinia nisl augue, eget pretium odio posuere et. Maecenas lorem mauris, sollicitudin eget dapibus eu, venenatis et neque.</div>
+			            </div>
+			          </div>
+
+			        </section>
+				</section>
+				<section>
+					<section>
+						How to challenge designers !
+					</section>
+				</section>
+				<section>
+					<h2>Ressources</h2>
+					<ul>
+						<li><a href="http://freddy03h.github.io/flexbox-presentation">http://freddy03h.github.io/flexbox-presentation</a> (examples showed in this presentation)</li>
+						<li>W3C Specifications <a href="http://www.w3.org/TR/css3-flexbox">http://www.w3.org/TR/css3-flexbox</a></li>
+						<li>Game <a href="http://www.flexboxdefense.com/">http://www.flexboxdefense.com/</a></li>
+						<li>Game <a href="http://flexboxfroggy.com/">http://flexboxfroggy.com/</a></li>
+						<li>Wes Bos video tutorials <a href="http://flexbox.io/">http://flexbox.io/</a></li>
+						<li>Real life exemples <a href="http://jackintheflexbox.tumblr.com/">http://jackintheflexbox.tumblr.com/</a></li>
+						<li>Solved by flexbox <a href="http://philipwalton.github.io/solved-by-flexbox/">http://philipwalton.github.io/solved-by-flexbox/</a></li>
+						<li>Cheatsheet <a href="http://jonibologna.com/flexbox-cheatsheet/">http://jonibologna.com/flexbox-cheatsheet/</a></li>
+						<li>Visual guide <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></li>
+						<li>Grid system <a href="http://the-echoplex.net/flexyboxes/">http://the-echoplex.net/flexyboxes/</a></li>
+						<li>Grid system <a href="https://github.com/10up/flexibility/">https://github.com/10up/flexibility/</a></li>
+						<li>Grid system <a href="http://flexboxgrid.com/">http://flexboxgrid.com/</a></li>
+					</ul>
+				</section>
 			</div>
 
 		</div>
