@@ -169,7 +169,7 @@ h3.example {
 h3.example::before,
 h3.example::after {
     content: "";
-    border-bottom: solid #39414C 1px;
+    border-bottom: solid #000032 1px;
     -webkit-flex: 1;
     flex: 1;
 }
