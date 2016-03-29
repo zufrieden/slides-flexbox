@@ -104,7 +104,9 @@
 							<div><img src="http://photos4.meetupstatic.com/photos/member/6/7/b/8/thumb_109106552.jpeg" alt="" /></div>
 						</div>
 					</section>
-					<section  data-background="http://antistatique.net/sites/default/files/styles/hero_breakpoints_theme_bootstrap_screen-lg-min_1x/public/hero-page/antistatique-home_1_3.jpg?itok=gn3Irf8Z">
+					<section data-background="ressources/img/beer.png">
+					</section>
+					<section  data-background="ressources/img/antistatique.jpg">
 						<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 332 61.9" style="enable-background:new 0 0 332 61.9;" xml:space="preserve" width="340" height="70">
                   <g class="antistatique_logo">
                     <path class="st0" d="M156,40.3c-1.1,0-2.1-0.6-2.1-1.8V22.7h5.1v-6.4h-5.1V6.1l-7.4,4v6.2H142v6.4h4.5V40c0,3.4,2.1,7,8.1,7
@@ -1149,7 +1151,9 @@ input[type="email"] {
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'socket.io/socket.io.js', async: true },
+	        { src: 'plugin/notes-server/client.js', async: true }
 				]
 			});
 
