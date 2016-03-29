@@ -91,6 +91,7 @@ html{
   color: white;
   box-sizing: border-box;
   font-size: 26px !important;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
 }
 .container .item {
   padding: 10px !important;
